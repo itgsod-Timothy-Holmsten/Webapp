@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="color-primary-3" id="wrapper-add-formula">
+        <form action="/add" method="POST">
+            <table cellpadding="10" id="table-add-formula">
+                <tr>
+                    <td><input name="user_name" type="text" class="input-normal" id="input-add-formula" placeholder="What is your name?"></td>
+                </tr>
+                <tr>
+                    <td><input name="formula_name" type="text" class="input-normal" id="input-add-formula" placeholder="Name of formula:"></td>
+                </tr>
+                <tr>
+                    <td><input name="formula_formula" type="text" class="input-normal" id="input-add-formula" placeholder="How is the formula written? ex: F=(mv^2)/2"></td>
+                </tr>
+                <tr>
+                    <td><input name="formula_variables" type="text" class="input-normal" id="input-add-formula" placeholder="Variables, example: m v F"></td>
+                </tr>
+                <tr>
+                    <td><textarea name="formula_explanation" id="textarea-add-formula" placeholder="Write a comment here"></textarea></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" class="color-complement-0 btn-normal"><i class="fa fa-check"></i> Submit formula</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}

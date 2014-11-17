@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/css/style.css">
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <link rel="shortcut icon" href="../static/img/formit_logo_no_outline.png">
+
+        {% if title %}
+            <title>{{title}}</title>
+        {% else %}
+            <title>Form-It</title>
+        {% endif %}
+    </head>
+        <body>
+            <div class="wrapper">
+                <nav>
+                    <div class="color-primary-3 navigation-bar">
+                        <div id="login-div" class="color-primary-3">
+                            <table cellspacing="0" id="login-table" cellpadding="5">
+                                <form method="GET">
+                                    <tr>
+                                        <td><input type="text" class="input-normal" placeholder="Email" id="input-login"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="password" class="input-normal" placeholder="Password" id="input-login"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+
+                                                <!--<input type="submit" class="color-secondary-1-1 btn-normal" id="login-submit">
+                                                <input type="submit" class="color-secondary-1-1 btn-normal" id="sign-up-submit">-->
+
+                                                <button class="color-complement-0 btn-normal"><i class="fa fa-sign-in"></i> Log in</button>
+                                                <button class="color-complement-0 btn-normal"><i class="fa fa-lock"></i> Sign up</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </form>
+                            </table>
+                        </div>
+                        <div id="logo-div">
+                            <a href="/"><img src="static/img/formit_logo_no_outline.png"></a>
+                            <a href="/"><img src="static/img/logo_text.png"></a>
+                        </div>
+                        <div id="search-div">
+                            <form method="GET">
+                                <input type="text" class="input-normal" id="main-search-input" placeholder="What do you search for?">
+                                <input type="text" class="input-normal" id="main-search-input" placeholder="What do you have?">
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                <!--
+                <div class="color-primary-3" id="floating-nav-bar-left">
+                    <button class="color-complement-0 btn-normal" id="btn-add-formula"><i class="fa fa-plus-square"></i><a href="/add"> Add a formula</a></button>
+                </div>
+                -->
+
+                {% if search %}
+                    <div class="color-primary-3" id="search-wrapper">
+                        {{ search }}
+                    </div>
+                {% endif %}
+
+                {% block body %}
+
+                {% endblock %}
+            </div>
+        </body>
+</html>
