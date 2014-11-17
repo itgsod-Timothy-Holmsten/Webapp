@@ -20,10 +20,3 @@ class Formula(object):
             "explanation": self.explanation,
             "information": {"name_added_by": self.name_added_by, "date": self.date}
         })
-
-    def create_html_search(self):
-        html = "<div class='color-primary-4 formula-div'>" + \
-                    "<h1>"+self.name+": "+self.formula+"</h1>" + \
-                "</div>"
-
-        return html

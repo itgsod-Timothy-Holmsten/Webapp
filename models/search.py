@@ -24,4 +24,4 @@ class Search(object):
         if self.using_table():
             formulas = self.database_table.search( where('variables').all(search_id) )
             # return the formulas we got from the database
-            return formulas
+            return list(formulas)

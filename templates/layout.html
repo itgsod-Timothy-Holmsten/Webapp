@@ -45,9 +45,10 @@
                             <a href="/"><img src="static/img/logo_text.png"></a>
                         </div>
                         <div id="search-div">
-                            <form method="GET">
-                                <input type="text" class="input-normal" id="main-search-input" placeholder="What do you search for?">
-                                <input type="text" class="input-normal" id="main-search-input" placeholder="What do you have?">
+                            <form action="/search" method="GET">
+                                <input name="search_for" type="text" class="input-normal" id="main-search-input" placeholder="What do you search for?">
+                                <input name="search_have" type="text" class="input-normal" id="main-search-input" placeholder="What do you have?">
+                                <input type="submit">
                             </form>
                         </div>
                     </div>
