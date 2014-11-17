@@ -60,7 +60,11 @@
 
                 {% if search %}
                     <div class="color-primary-3" id="search-wrapper">
-                        {{ search }}
+                        {% for formula in formulas %}
+                            <div class='color-primary-4 formula-div'>
+                                <h1>{{ formula['name'] }}: {{ formula['formula'] }}</h1>
+                            </div>
+                        {% endfor %}
                     </div>
                 {% endif %}
 

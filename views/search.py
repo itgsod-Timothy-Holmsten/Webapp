@@ -9,7 +9,7 @@ def search(search_id):
     search = Search(preloaded_db, "formulas")
     formulas = search.get_formulas_from_variables(search_id)
 
-    formulas_html = ""
+    forms = []
 
     for formula in formulas:
         form = Formula(
@@ -20,10 +20,8 @@ def search(search_id):
                 formula['information']['name_added_by'],
                 formula['information']['date'])
 
-        formulas_html = form.create_html_search()
+        forms.append(form)
 
-    html = formulas_html
-
-    return render_template("index.html", search=html)
+    return render_template("index.html", search=search_id, formulas=forms)
 
 

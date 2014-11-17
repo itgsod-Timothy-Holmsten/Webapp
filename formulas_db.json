@@ -1,1 +1,0 @@
-{"_default": {}, "formulas": {"1": {"variables": ["a", "b", "c"], "formula": "a=b+c", "explanation": "ABC", "information": {"name_added_by": "Alfred", "date": "<class 'datetime.date'>"}, "name": "abc formeln"}}}
