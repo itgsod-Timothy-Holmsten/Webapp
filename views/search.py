@@ -10,17 +10,12 @@ def get_search():
         search_for = request.form.get("search_for")
         search_have = request.form.get("search_have")
 
-        print(search_have)
-
         _search = search_for + search_have
 
-        print(_search)
-
         return search(_search)
-    return "ej"
 
 
-@app.route("/search=<search_id>", methods=["GET"])
+#@app.route("/search=<search_id>", methods=["GET"])
 def search(search_id):
     search = Search(preloaded_db, "formulas")
     formulas = search.get_formulas_from_variables(search_id)
