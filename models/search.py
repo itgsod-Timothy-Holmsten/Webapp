@@ -38,8 +38,8 @@ class Search(object):
         formula_search = []
         for word in search.split(" "):
             # Add the word to the formula_search so we can later use it with TinyDB
-            if merged_unity_dict.get(word.lower):
-                formula_search.append(merged_unity_dict[word.lower()])
+            formula_search.append(merged_unity_dict[word.lower()])
+
 
         # Are we searching a table
         if self.using_table():
