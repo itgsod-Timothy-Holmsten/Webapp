@@ -46,8 +46,8 @@
                         </div>
                         <div id="search-div">
                             <form action="/search" method="POST">
-                                <input name="search_have" type="text" class="input-normal" id="main-search-input" placeholder="What do you have?">
-                                <input name="search_for" type="text" class="input-normal" id="main-search-input" placeholder="What are you searching for?">
+                                <input name="search" type="text" class="input-normal" id="main-search-input" placeholder="Search">
+                                <!--<input name="search_for" type="text" class="input-normal" id="main-search-input" placeholder="What are you searching for?">-->
                                 <input id="btn-search-formula" type="submit">
                             </form>
                         </div>
@@ -63,9 +63,31 @@
                     <div class="color-primary-3" id="search-wrapper">
                         {% for formula in formulas %}
                             <div class='color-primary-4 formula-div'>
-                                <h1>{{ formula['name'] }}: {{ formula['formula'] }}</h1>
+                                <a href="/formula={{ formula['id'] }}"><h1>{{ formula['name'] }}: {{ formula['formula'] }}</h1></a>
                             </div>
                         {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if formula %}
+                    <div class="color-primary-3" id="formula-wrapper">
+                        <table id="table-formula">
+                            <tr>
+                                <td> <h1 style="text-align: left">Name: {{ formula['name'] }}</h1> </td>
+                            </tr>
+
+                            <tr>
+                                <td> <h1 style="text-align: left">Uses:{% for variable in formula['variables'] %} {{ variable }}; {% endfor %}</h1> </td>
+                            </tr>
+
+                            <tr>
+                                <td> <h1 style="text-align: left">Written as: {{ formula['formula'] }}</h1> </td>
+                            </tr>
+
+                            <tr>
+                                <td> <h1 style="text-align: left">Explanation:</h1> <p>{{ formula['explanation'] }}</p> </td>
+                            </tr>
+                        </table>
                     </div>
                 {% endif %}
 

@@ -9,6 +9,14 @@ class Search(object):
         if len(self.database_table) > 0:
             return True
 
+    def get_formula_from_id(self, formula_id):
+        search = int(formula_id)
+
+        if self.using_table():
+            formula = self.database_table.search( where('id') == search )
+            print(formula)
+            return formula
+
     def get_formulas_from_variables(self, search_id):
         #Replace this with a database
         find_unity = {"length": "length", "meter": "length", "velocity": "velocity", "m/s": "velocity",
@@ -29,6 +37,5 @@ class Search(object):
         if self.using_table():
             formulas = self.database_table.search( where('variables').all(formula_search) )
 
-            print formulas
             # return the formulas we got from the database
             return list(formulas)

@@ -7,12 +7,9 @@ from webapp.models.formula import Formula
 @app.route("/search", methods=["POST", "GET"])
 def get_search():
     if request.method == "POST":
-        search_for = request.form.get("search_for")
-        search_have = request.form.get("search_have")
+        search_input = request.form.get("search")
 
-        _search = search_for + search_have
-
-        return search(_search)
+        return search(search_input)
 
     return render_template("layout.html")
 
@@ -35,6 +32,8 @@ def search(search_id):
                 formula['explanation'],
                 formula['information']['name_added_by'],
                 formula['information']['date'])
+
+        form.id = formula['id']
 
         forms.append(form)
 

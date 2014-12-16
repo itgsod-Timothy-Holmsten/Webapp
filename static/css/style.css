@@ -67,7 +67,7 @@ body {
 #main-search-input {
     width: 100%;
     height: 40px;
-    margin-top: 12px;
+    margin-top: 45px;
 }
 
 #logo-div {
@@ -150,6 +150,16 @@ h1 {
     text-align: center;
 }
 
+p {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+
+    color: #000000;
+}
+
 .list-undecorated {
     list-style-type: none;
     padding: 0;
@@ -216,6 +226,27 @@ h1 {
 
 #btn-search-formula {
     display: none;
+}
+
+#table-formula {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formula-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+
+    width: 50%;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    border: 1px solid #394d47;
+
+    overflow: hidden;
 }
 
 .input-normal {

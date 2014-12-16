@@ -11,4 +11,4 @@ app.secret_key = "troleolol"
 preloaded_db = "formulas_db.json"
 
 import models
-from webapp.views import home, add_formula, search
+from webapp.views import home, add_formula, search, formula

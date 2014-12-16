@@ -20,5 +20,3 @@ for word in search.split(" "):
 # Are we searching a table
 
 formulas = db.table("formulas").search( where('variables').all(formula_search) )
-
-print formulas
