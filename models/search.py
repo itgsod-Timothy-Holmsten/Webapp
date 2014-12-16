@@ -14,7 +14,6 @@ class Search(object):
 
         if self.using_table():
             formula = self.database_table.search( where('id') == search )
-            print(formula)
             return formula
 
     def get_formulas_from_variables(self, search_id):
