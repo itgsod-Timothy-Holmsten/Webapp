@@ -67,12 +67,15 @@
                             </div>
                         {% endfor %}
 
+
+                        {% if unsolvable_formulas %}
+                            <h1 style="color: #9A8E72; text-align: left">Unsolvable formula(s)</h1>
                         {% for formula in unsolvable_formulas %}
-                            <h1 style="color: #c12023; text-align: left">Unsolvable formulas:</h1>
                             <div class='color-primary-4 formula-div'>
                                 <a href="/formula={{ formula['id'] }}"><h1>{{ formula['name'] }}: {{ formula['formula'] }}</h1></a>
                             </div>
                         {% endfor %}
+                        {% endif %}
                     </div>
                 {% endif %}
 
