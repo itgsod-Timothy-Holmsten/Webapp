@@ -14,6 +14,8 @@ def get_search():
 
         return search(_search)
 
+    return render_template("layout.html")
+
 
 #@app.route("/search=<search_id>", methods=["GET"])
 def search(search_id):

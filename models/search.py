@@ -10,18 +10,25 @@ class Search(object):
             return True
 
     def get_formulas_from_variables(self, search_id):
+        #Replace this with a database
+        find_unity = {"length": "length", "meter": "length", "velocity": "velocity", "m/s": "velocity",
+                      "time": "time", "hour": "time", "seconds": "time", "energy": "energy", "joule": "energy",
+                      "mass": "mass", "kg": "mass", "kilogram": "mass", "force": "force", "newton": "force",
+                      "work": "work", "w": "work"}
+
         # The search must be a list of a string
-        search = [str(search_id)]
+        search = str(search_id)
         # This is the search we are going to use with TinyDB
         formula_search = []
-        for char in search:
-            # Is the char a letter in the alphabet
-            if char.isalpha():
-                # Add the char to the formula_search so we can later use it with TinyDB
-                formula_search.append(char)
+        for word in search.split(" "):
+            # Add the word to the formula_search so we can later use it with TinyDB
+            formula_search.append(find_unity[word.lower()])
+
 
         # Are we searching a table
         if self.using_table():
-            formulas = self.database_table.search( where('variables').all(search_id) )
+            formulas = self.database_table.search( where('variables').all(formula_search) )
+
+            print formulas
             # return the formulas we got from the database
             return list(formulas)

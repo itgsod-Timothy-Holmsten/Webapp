@@ -17,9 +17,8 @@ def add_formula():
         variables = str(request.form.get("formula_variables"))
         variables_list = []
 
-        for var in variables:
-            if var.isalpha():
-                variables_list.append(var)
+        for var in variables.split(" "):
+            variables_list.append(var.lower())
 
         explanation = request.form.get("formula_explanation")
 

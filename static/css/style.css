@@ -214,6 +214,10 @@ h1 {
     overflow: hidden;
 }
 
+#btn-search-formula {
+    display: none;
+}
+
 .input-normal {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 18px;
