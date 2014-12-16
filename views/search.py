@@ -19,9 +19,6 @@ def search(search_id):
     search = Search(preloaded_db, "formulas")
     formulas = search.get_formulas_from_variables(search_id)
 
-    if not len(formulas) > 0:
-        return render_template("layout.html")
-
     forms = []
     unsolvable_forms = []
 
