@@ -23,20 +23,23 @@ def search(search_id):
         return render_template("layout.html")
 
     forms = []
+    unsolvable_forms = []
 
     for formula in formulas:
         form = Formula(
                 formula['name'],
-                formula['variables'],
+                formula['unities'],
                 formula['formula'],
                 formula['explanation'],
                 formula['information']['name_added_by'],
                 formula['information']['date'])
 
         form.id = formula['id']
+        if not formula['missing_unities'] > 1:
+            forms.append(form)
+        else:
+            unsolvable_forms.append(form)
 
-        forms.append(form)
-
-    return render_template("layout.html", search=search_id, formulas=forms)
+    return render_template("layout.html", search=search_id, formulas=forms, unsolvable_formulas=unsolvable_forms)
 
 

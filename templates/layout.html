@@ -66,6 +66,13 @@
                                 <a href="/formula={{ formula['id'] }}"><h1>{{ formula['name'] }}: {{ formula['formula'] }}</h1></a>
                             </div>
                         {% endfor %}
+
+                        {% for formula in unsolvable_formulas %}
+                            <h1 style="color: #c12023; text-align: left">Unsolvable formulas:</h1>
+                            <div class='color-primary-4 formula-div'>
+                                <a href="/formula={{ formula['id'] }}"><h1>{{ formula['name'] }}: {{ formula['formula'] }}</h1></a>
+                            </div>
+                        {% endfor %}
                     </div>
                 {% endif %}
 
@@ -77,7 +84,7 @@
                             </tr>
 
                             <tr>
-                                <td> <h1 style="text-align: left">Uses:{% for variable in formula['variables'] %} {{ variable }}; {% endfor %}</h1> </td>
+                                <td> <h1 style="text-align: left">Uses:{% for variable in formula['unities'] %} {{ variable }}; {% endfor %}</h1> </td>
                             </tr>
 
                             <tr>

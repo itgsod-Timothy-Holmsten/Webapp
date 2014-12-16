@@ -14,8 +14,8 @@ def show_formula(formula_id):
 
     formula = formula[0]
 
-    for i in range(0, len(formula['variables'])):
-        formula['variables'][i] = formula['variables'][i].capitalize()
+    for i in range(0, len(formula['unitys'])):
+        formula['unities'][i] = formula['unities'][i].capitalize()
 
 
     return render_template("layout.html", formula=formula)
