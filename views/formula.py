@@ -14,7 +14,7 @@ def show_formula(formula_id):
 
     formula = formula[0]
 
-    for i in range(0, len(formula['unitys'])):
+    for i in range(0, len(formula['unities'])):
         formula['unities'][i] = formula['unities'][i].capitalize()
 
 

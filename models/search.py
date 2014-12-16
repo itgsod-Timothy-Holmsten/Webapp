@@ -47,7 +47,6 @@ class Search(object):
 
             for formula in formulas:
                 formula['missing_unities'] = len(formula['unities']) - len(formula_search)
-                print(formula['missing_unities'])
 
             # return the formulas we got from the database
             return list(formulas)
