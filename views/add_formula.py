@@ -17,8 +17,9 @@ def add_formula():
         units = str(request.form.get("formula_units"))
         units_list = []
 
-        for var in units.split(" "):
-            units_list.append(var.lower())
+        for var in units.split(","):
+            if var.isalpha():
+                units_list.append(var.lower())
 
         explanation = request.form.get("formula_explanation")
 
