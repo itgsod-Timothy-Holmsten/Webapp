@@ -14,15 +14,15 @@ def add_formula():
         formula_written = request.form.get("formula_formula")
 
         # Make sure variables are letters and not ("space" " ")
-        unities = str(request.form.get("formula_unities"))
-        unities_list = []
+        units = str(request.form.get("formula_units"))
+        units_list = []
 
-        for var in unities.split(" "):
-            unities_list.append(var.lower())
+        for var in units.split(" "):
+            units_list.append(var.lower())
 
         explanation = request.form.get("formula_explanation")
 
-        formula = Formula(name, unities_list, formula_written, explanation, user_name, datetime.date)
+        formula = Formula(name, units_list, formula_written, explanation, user_name, datetime.date)
         db = preloaded_db
         table = "formulas"
         formula.add_to_db(db, table)

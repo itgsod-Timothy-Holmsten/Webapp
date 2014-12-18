@@ -28,14 +28,14 @@ def search(search_id):
     for formula in formulas:
         form = Formula(
                 formula['name'],
-                formula['unities'],
+                formula['units'],
                 formula['formula'],
                 formula['explanation'],
                 formula['information']['name_added_by'],
                 formula['information']['date'])
 
         form.id = formula['id']
-        if not formula['missing_unities'] > 1:
+        if not formula['missing_units'] > 1:
             forms.append(form)
         else:
             unsolvable_forms.append(form)
