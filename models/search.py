@@ -38,7 +38,7 @@ class Search(object):
         search = str(search_id)
         # This is the search we are going to use with TinyDB
         formula_search = []
-        for word in search.split(","):
+        for word in search.split(", "):
             if word.isalpha():
                 # Add the word to the formula_search so we can later use it with TinyDB
                 formula_search.append(merged_unit_dict[word.lower()])
